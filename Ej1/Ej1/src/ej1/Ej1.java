@@ -9,16 +9,16 @@ import Entidades.Mascotas;
 import Entidades.Persona;
 import Service.PersonaServicio;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Ej1 {
     public static void main(String[] args) {
+        boolean encontrado;
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         ArrayList <Persona> p1= new ArrayList();
         ArrayList <Mascotas> m1 = new ArrayList();
         PersonaServicio s1 = new PersonaServicio();
-        Persona persona = new Persona();
-        Mascotas mascota = new Mascotas();
         String respuesta;
         System.out.println("PERSONA");
         do {
@@ -35,8 +35,44 @@ public class Ej1 {
         } while (respuesta.equalsIgnoreCase("si"));
         System.out.println("--------------------");
         s1.mostrarMascota(m1);
-        p1.get(0).setMascota(m1.get(0));
-        p1.get(1).setMascota(m1.get(1));
+        System.out.println("--------------------");
         s1.mostrarPersona(p1);
+        
+        //APARTIR DE ACA ES EL EJERCICIO EXTRA SIN TERMINAR
+        
+        System.out.println("----------------------");
+        System.out.println("Elige una persona");
+        String persona = leer.next();
+        Iterator<Persona> it = p1.iterator();
+        encontrado = false;
+        while(it.hasNext()){
+            Persona per = it.next();
+            if (per.getNombre().equals(persona)){
+               encontrado = true; 
+            }
+        }
+        if (encontrado){
+            System.out.println("La persona fue encontrada");
+        }else{
+            System.out.println("No esta en la lista");
+        }
+        
+        System.out.println("----------------------");
+        System.out.println("Elige una mascota");
+        String mascota = leer.next();
+        Iterator<Mascotas> ut = m1.iterator();
+        encontrado = false;
+        while(it.hasNext()){
+            Mascotas mas = ut.next();
+            if (mas.getNombre().equals(mascota)){
+               encontrado = true; 
+            }
+        }
+        if (encontrado){
+            System.out.println("La mascota fue encontrada");
+        }else{
+            System.out.println("No esta en la lista");
+        }
+        System.out.println("La mascota "+mascota+" se va con "+persona);
     }   
 }

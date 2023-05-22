@@ -63,11 +63,8 @@ public class Persona {
         this.mascota = mascota;
     }
 
-
-
     @Override
     public String toString() {
-        return  "La persona es " + nombre + " " + apellido + ", tiene " + edad + " anios, su documento es " + documento + " y quiere adoptar a " + mascota.getNombre();
+        return  "La persona es " + nombre + " " + apellido + ", tiene " + edad + " anios, su documento es " + documento;
     }
-    
 }

@@ -23,12 +23,12 @@ public class JuegoServicio {
             for (int i = 0; i < cantJugadores; i++) {
                 jugadores.add(new Jugador(i + 1));
             }
-            Revolver r = new Revolver();
+            Revolver r = new Revolver();                                       
             return new Juego(jugadores, r);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Error creando nuevo juego: " + e.getMessage());
-            throw e;
+            e.printStackTrace();                                                //Si ocurre una excepcion a la hora de crear el juego
+            System.out.println("Error creando nuevo juego: " + e.getMessage()); //ej: Un Error, el catch y e.printStackTrace(), mostraran
+            throw e;                                                            //el error y donde se produjo.
         }
     }
 }

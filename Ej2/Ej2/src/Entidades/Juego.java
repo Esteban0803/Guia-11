@@ -32,19 +32,28 @@ public class Juego {
     public void ronda() throws Exception {
         if (!this.estanJugando) {
             throw new Exception("La partida ya terminó");
+            //Indica que la partida terminó
         }
+        //Esta parte significa que la partida sigue (si es que no termino)
+        
         this.estanJugando = !this.jugadores.get(this.indiceTurno++).disparo(this.revolver);
+        //Esta parte pasa por los distintos atributos para verificar si el jugador esta
+        //mojado(true) o no (false)
+        
         if (!this.estanJugando) {
             this.jugadorMojado = this.jugadores.get(this.indiceTurno - 1);
         }
+        //Se realiza una comprobacion, si el jugador no se mojo se pasa al siguiente
+        //donde se le asigne el "this.jugadorMojado" al siguiente para ver si se moja o no
+        //y el -1 es para obtener el indice del jugador anterior.
+        
         this.indiceTurno = this.indiceTurno % this.jugadores.size();
+        //Es para que el indice se mantenga dentro del rango valido de jugadores
     }
     	public boolean estanJugando() {
 		return this.estanJugando;
-	}
-	
+        }
 	public Jugador getJugadorMojado() {
 		return this.jugadorMojado;
 	}
-
 }

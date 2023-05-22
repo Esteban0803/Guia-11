@@ -9,9 +9,11 @@ package Service;
 import Entidades.Mascotas;
 import Entidades.Persona;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class PersonaServicio {
+    boolean encontrado;
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     public Persona crearPersona(){
         System.out.println("Ingrese el nombre");
@@ -28,7 +30,7 @@ public class PersonaServicio {
     public Mascotas crearMascota(){
         System.out.println("Ingrese el nombre");
         String nombree = leer.next();
-        System.out.println("Ingrese la raza");
+        System.out.println("Es un perro o un gato");
         String raza = leer.next();
         System.out.println("Ingrese la edad");
         Integer edadd = leer.nextInt();

@@ -34,7 +34,7 @@ public class Revolver {
     public void siguienteChorro() {
         this.posicion++;
         this.agua = this.posicion % 6;
+        //Como hay 6 lugares (0 a 5) dará como resultado un numero
+        //que será donde se alojará el agua
     }
-
-
 }
